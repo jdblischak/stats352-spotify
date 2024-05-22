@@ -36,6 +36,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
 <!-- Add a small amount of space between sections. -->
@@ -340,7 +342,13 @@ div.tocify {
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/jdblischak/stats352-spotify">
+    <span class="fab fa-github"></span>
+     
+    Source code
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -512,13 +520,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstronge22daa6">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjdblischakstats352spotifytree50e1f7278e986bec3b641f6a7ee16bf8fdb7d5e5targetblank50e1f72a">
 <span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>Repository version:</strong> e22daa6
+aria-hidden="true"></span> <strong>Repository version:</strong>
+<a href="https://github.com/jdblischak/stats352-spotify/tree/50e1f7278e986bec3b641f6a7ee16bf8fdb7d5e5" target="_blank">50e1f72</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstronge22daa6"
+<div
+id="strongRepositoryversionstrongahrefhttpsgithubcomjdblischakstats352spotifytree50e1f7278e986bec3b641f6a7ee16bf8fdb7d5e5targetblank50e1f72a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -527,7 +537,8 @@ and connecting the code version to the results is critical for
 reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version e22daa6.
+The results in this page were generated with repository version
+<a href="https://github.com/jdblischak/stats352-spotify/tree/50e1f7278e986bec3b641f6a7ee16bf8fdb7d5e5" target="_blank">50e1f72</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -591,7 +602,41 @@ Message
 Rmd
 </td>
 <td>
-e22daa6
+<a href="https://github.com/jdblischak/stats352-spotify/blob/50e1f7278e986bec3b641f6a7ee16bf8fdb7d5e5/analysis/spotify.Rmd" target="_blank">50e1f72</a>
+</td>
+<td>
+John Blischak
+</td>
+<td>
+2024-05-22
+</td>
+<td>
+wflow_publish("analysis/spotify.Rmd", delete_cache = TRUE)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jdblischak/stats352-spotify/35c8864d4d1ec8b1a6ce27c0ede4ca991685f34a/docs/spotify.html" target="_blank">35c8864</a>
+</td>
+<td>
+John Blischak
+</td>
+<td>
+2024-05-22
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jdblischak/stats352-spotify/blob/e22daa6b2bb5cae60573af77c0b4af813a59c8cf/analysis/spotify.Rmd" target="_blank">e22daa6</a>
 </td>
 <td>
 John Blischak
@@ -617,6 +662,7 @@ href="https://twitter.com/kaylinquest">@kaylinquest</a>) in her 2019
 blog post <a
 href="https://www.kaylinpavlik.com/classifying-songs-genres/">Understanding
 + classifying genres using Spotify audio features</a>.</p>
+<pre class="r"><code>knitr::opts_chunk$set(autodep = TRUE)</code></pre>
 <pre class="r"><code>spotify &lt;- read.csv(&quot;data/spotify.csv&quot;, stringsAsFactors = FALSE)
 dim(spotify)</code></pre>
 <pre><code>[1] 32833    15</code></pre>
@@ -660,6 +706,43 @@ model &lt;- rpart(genre ~ ., data = spotifyTraining)
 plot(model, margin = 0.05)
 text(model)</code></pre>
 <p><img src="figure/spotify.Rmd/classification-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-classification-1">
+Past versions of classification-1.png
+</button>
+</p>
+<div id="fig-classification-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jdblischak/stats352-spotify/blob/35c8864d4d1ec8b1a6ce27c0ede4ca991685f34a/docs/figure/spotify.Rmd/classification-1.png" target="_blank">35c8864</a>
+</td>
+<td>
+John Blischak
+</td>
+<td>
+2024-05-22
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Calculate prediction accuracy of the model on the training and
 testing sets.</p>
 <pre class="r"><code>predictTraining &lt;- predict(model, type = &quot;class&quot;)
@@ -727,8 +810,9 @@ loaded via a namespace (and not attached):
 [25] getPass_0.2-4     fs_1.6.4          sass_0.4.9        cli_3.6.2        
 [29] magrittr_2.0.3    ps_1.7.6          digest_0.6.35     processx_3.8.4   
 [33] rstudioapi_0.16.0 lifecycle_1.0.4   vctrs_0.6.5       evaluate_0.23    
-[37] glue_1.7.0        whisker_0.4.1     fansi_1.0.6       rmarkdown_2.26   
-[41] httr_1.4.7        tools_4.3.3       pkgconfig_2.0.3   htmltools_0.5.8.1</code></pre>
+[37] glue_1.7.0        whisker_0.4.1     codetools_0.2-20  fansi_1.0.6      
+[41] rmarkdown_2.26    httr_1.4.7        tools_4.3.3       pkgconfig_2.0.3  
+[45] htmltools_0.5.8.1</code></pre>
 </div>
 
 
