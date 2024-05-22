@@ -14,6 +14,11 @@ classifying genres using Spotify audio features][blog-post].
 [kaylinquest]: https://twitter.com/kaylinquest
 [blog-post]: https://www.kaylinpavlik.com/classifying-songs-genres/
 
+```{r setup}
+knitr::opts_chunk$set(autodep = TRUE)
+```
+
+
 ```{r import}
 spotify <- read.csv("data/spotify.csv", stringsAsFactors = FALSE)
 dim(spotify)
@@ -59,7 +64,7 @@ table(predicted = predictTesting, observed = spotifyTesting[, 1])
 
 How does the model compare to random guessing?
 
-```{r random-guess}
+```{r random-guess, cache=TRUE}
 predictRandom <- sample(unique(spotifyTesting[, 1]),
                         size = nrow(spotifyTesting),
                         replace = TRUE,
